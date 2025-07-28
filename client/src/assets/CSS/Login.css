@@ -1,0 +1,209 @@
+/* Login.css */
+
+.login-container, .register-container {
+  min-height: 100vh;
+  display: flex;
+}
+
+/* Left side - Green curved background */
+.left-section {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #10b981 0%, #059669 50%, #047857 100%);
+}
+
+/* Curved shape overlay */
+.curved-overlay {
+  position: absolute;
+  inset: 0;
+}
+
+.curved-overlay svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Simple image container */
+.image-container {
+  position: absolute;
+  top: 50%;
+  left: 2rem;
+  transform: translateY(-50%);
+}
+
+.login-image , .register-image{
+  width: 25rem;
+  height: 25rem;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.1));
+}
+
+
+/* Right side - form */
+.right-section {
+  flex: 1;
+  background-color: #f9fafb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.form-container {
+  width: 100%;
+  max-width: 24rem;
+}
+/* profile section */
+.profile-section {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.profile-avatar {
+  width: 5rem;
+  height: 5rem;
+  background-color: #e5e7eb;
+  border-radius: 50%;
+  margin: 0 auto 1.5rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 3px solid #f3f4f6;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.profile-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.welcome-title {
+  font-size: 2.25rem;
+  font-weight: bold;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.05em;
+}
+/* Form styles */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.input-label {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.5rem;
+}
+
+.input-icon.emerald {
+  color: #10b981;
+}
+
+.input-icon.gray {
+  color: #9ca3af;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.75rem 0;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #d1d5db;
+  outline: none;
+  color: #1f2937;
+  font-size: 1.125rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-input.emerald-border {
+  border-bottom-color: #10b981;
+}
+
+.form-input:focus {
+  border-bottom-color: #059669;
+}
+
+.error-message {
+  color: #ef4444;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+}
+
+/* Forgot password */
+.forgot-password {
+  text-align: right;
+  padding-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.forgot-password-link {
+  font-size: 0.875rem;
+  color: #9ca3af;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.forgot-password-link:hover {
+  color: #10b981;
+}
+
+/* Login button */
+.login-button-container, .register-button-container{
+  padding-top: 1rem;
+}
+
+.login-button, .register-button{
+  width: 100%;
+  padding: 1rem 0;
+  border-radius: 9999px;
+  color: white;
+  font-weight: 600;
+  font-size: 1.125rem;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.login-button:hover , .register-button:hover{
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  transform: scale(1.05);
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  .image-container {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .login-container,.register-container {
+    flex-direction: column;
+  }
+  
+  .left-section {
+    min-height: 30vh;
+  }
+  
+  .right-section {
+    min-height: 70vh;
+  }
+}
