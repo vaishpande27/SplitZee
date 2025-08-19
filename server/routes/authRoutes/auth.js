@@ -15,6 +15,6 @@ router.get('/get-user',checkUser,(req,res)=>{
   res.status(200).json({message:'',user: res.locals.cuser})
 })
 
-router.get('/logout',authController.logout_get);
+router.post('/logout',authController.logout_get);
 
 module.exports = router

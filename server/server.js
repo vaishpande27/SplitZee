@@ -7,7 +7,6 @@ const cookieParser = require('cookie-parser')
 dotenv.config();
 const app = express();
 const groupRoutes = require('./routes/userFunctionalities/groupRoutes') 
-
 // Middlewares
 // By default, browsers do not send cookies (including JWT) between cross-origin requests (e.g., frontend on localhost:5173 and backend on localhost:5000).
 app.use(cors(
@@ -21,7 +20,7 @@ app.use(cookieParser())
 
 //routes
 app.use('/', authRoutes)
-app.use('/', groupRoutes)
+app.use('/groups', groupRoutes)
 
 // MongoDB Connection
 mongoose.connect(process.env.MONGO_URI, {

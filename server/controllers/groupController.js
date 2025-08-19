@@ -3,6 +3,7 @@ const User = require('../models/User')
 const Group = require('../models/Group')
 const requireAuth = require('../middlewares/authmiddleware')
 const sendInviteEmail = require('../utils/sendInviteEmail')
+const mongoose= require('mongoose')
 
 //post the created group to DB
 exports.create_group = async (req, res) => {
@@ -67,7 +68,11 @@ exports.create_group = async (req, res) => {
 exports.get_groups = async(req,res) => {
     const userId = req.user.id;
     try{
-        const groups = await Group.find({members : userId}).populate('members','name email')
+        const groups = await Group.find({members : userId})
+        .populate('members','name email')
+        .populate('createdBy','name email');
+        // populate() helps you access full referenced data without making a separate query.
+        console.log("Fetched groups:", groups);
         res.status(200).json(groups);
     }catch(err){
         console.error("Error fetchng groups:",err.message)
@@ -75,6 +80,3 @@ exports.get_groups = async(req,res) => {
     }
 }
 
-exports.Invite_post = (req, res) => {
-
-}

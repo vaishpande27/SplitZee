@@ -20,7 +20,7 @@ function CreateGroup() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        'http://localhost:5000/create_group',
+        'http://localhost:5000/groups/create_group',
         {
           groupname,
           description,
