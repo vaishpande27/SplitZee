@@ -11,7 +11,7 @@ const groupRoutes = require('./routes/userFunctionalities/groupRoutes')
 // By default, browsers do not send cookies (including JWT) between cross-origin requests (e.g., frontend on localhost:5173 and backend on localhost:5000).
 app.use(cors(
   {
-    origin: 'http://localhost:5173', 
+    origin: 'https://splitzee-frontend.onrender.com', 
     credentials: true
   }
 ));
