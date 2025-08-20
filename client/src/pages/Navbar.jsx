@@ -11,7 +11,7 @@ function Navbar() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/get-user", { withCredentials: true })
+      .get("https://splitzee.onrender.com/get-user", { withCredentials: true })
       .then((res) => {
         setUser(res.data.user); // store user info
       })
@@ -22,7 +22,7 @@ function Navbar() {
 
   const handleLogout = () => {
     axios
-      .post("http://localhost:5000/logout", {}, { withCredentials: true })
+      .post("https://splitzee.onrender.com/logout", {}, { withCredentials: true })
       .then(() => {
         setUser(null);
         navigate("/login");
