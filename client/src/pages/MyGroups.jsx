@@ -8,7 +8,7 @@ function MyGroups() {
     useEffect(() => {
         const fetchGroups = async () => {
             try {
-                const response = await axios.get("http://localhost:5000/groups", {
+                const response = await axios.get("https://splitzee.onrender.com/groups", {
                     withCredentials: true
                 });
                 setGroups(response.data);
