@@ -5,6 +5,7 @@ const requireAuth = require('../middlewares/authmiddleware')
 const sendInviteEmail = require('../utils/sendInviteEmail')
 const mongoose= require('mongoose')
 
+
 //post the created group to DB
 exports.create_group = async (req, res) => {
     // take the groupname, current user who creted group ,
