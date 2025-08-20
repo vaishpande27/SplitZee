@@ -31,7 +31,7 @@ function ModernCreateGroup() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        'http://localhost:5000/groups/create_group',
+        'https://splitzee.onrender.com/groups/create_group',
         {
           groupname,
           description,
