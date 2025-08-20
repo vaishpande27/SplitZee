@@ -58,7 +58,7 @@ function Transactions() {
   // fetch members & transactions
   const fetchGroupInfo = async () => {
     try {
-      const res = await axios.get(`http://localhost:5000/groups/${groupId}`, {
+      const res = await axios.get(`https://splitzee.onrender.com/groups/${groupId}`, {
         withCredentials: true
       })
       // console.log(res.data)
@@ -72,7 +72,7 @@ function Transactions() {
   }
   const fetchTransactions = async () => {
     try {
-      const res = await axios.get(`http://localhost:5000/groups/${groupId}/transactions`, {
+      const res = await axios.get(`https://splitzee.onrender.com/groups/${groupId}/transactions`, {
         withCredentials: true
       });
       // console.log(res.data.transactions);
@@ -84,7 +84,7 @@ function Transactions() {
   };
   const fetchBalances = async () => {
     try {
-      const res = await axios.get(`http://localhost:5000/groups/${groupId}/balances`, {
+      const res = await axios.get(`https://splitzee.onrender.com/groups/${groupId}/balances`, {
         withCredentials: true
       });
       setBalances(res.data.balances || []);
