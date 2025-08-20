@@ -40,7 +40,9 @@ const createToken = (id) => {
 }
 
 exports.register_post = async (req, res) => {
-    const {username, email, password } = req.body
+    const {username, email, password } = req.body;
+        console.log("Register Body:", req.body);
+
 
     try {
         const user = await User.create({name:username, email, password })
