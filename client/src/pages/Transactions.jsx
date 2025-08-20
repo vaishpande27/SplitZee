@@ -108,7 +108,7 @@ function Transactions() {
     }
     try {
       await axios.post(
-        `http://localhost:5000/groups/${groupId}/transactions`,
+        `https://splitzee.onrender.com/groups/${groupId}/transactions`,
         {
           description,
           amount,
