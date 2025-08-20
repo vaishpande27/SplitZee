@@ -40,7 +40,8 @@ function Register() {
         email,
         password
       }, {
-        withCredentials: true
+        withCredentials: true,
+        headers: { "Content-Type": "application/json" }
       });
 
       console.log("User registered:", res.data);
