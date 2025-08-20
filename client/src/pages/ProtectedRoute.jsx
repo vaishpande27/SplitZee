@@ -7,7 +7,7 @@ function ProtectedRoute({children}){
     const navigate = useNavigate();
 
     useEffect(()=>{
-        axios.get('http://localhost:5000/verify-user',{
+        axios.get('https://splitzee.onrender.com/verify-user',{
             withCredentials:true
         })
         .then((res)=>{
