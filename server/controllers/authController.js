@@ -49,7 +49,9 @@ exports.register_post = async (req, res) => {
         const token = createToken(user._id) //now we created a jwt token so we have to put this in cookie and send it to browser
         res.cookie('jwt', token, {
             httpOnly: true,
-            maxAge: maxAge * 1000
+            maxAge: maxAge * 1000,
+            secure: true,           // required for HTTPS
+  sameSite: "none"  
         })
         res.status(201).json({
             message: 'SignUp Successful!',
@@ -72,7 +74,9 @@ exports.login_post = async (req, res) => {
         const token = createToken(user._id) //now we created a jwt token so we have to put this in cookie and send it to browser
         res.cookie('jwt', token, {
             httpOnly: true,
-            maxAge: maxAge * 1000
+            maxAge: maxAge * 1000,
+            secure: true,           // required for HTTPS
+  sameSite: "none"  
         })
         return res.status(200).json({
             message: "Login successful",
